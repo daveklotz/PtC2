@@ -58,8 +58,7 @@ struct ContentView: View {
                                                          
                             let url = URL(fileURLWithPath: punchPath)
                             
-                            do {
-                                try AVAudioSession
+                            do {                                
                                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
                                 try AVAudioSession.sharedInstance().setActive(true)
                                 
