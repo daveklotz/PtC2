@@ -45,10 +45,21 @@ struct ContentView: View {
                         .onTapGesture {
                             self.clownImage = "punchedclown"
                             
-                            let punchPath = Bundle.main.path(forResource: "punch.wav", ofType:nil)!
+                            let randoClownrissian = Int.random(in: 0..<3)
+                            
+                            var punchPath: String
+                            if randoClownrissian == 0 {
+                                punchPath = Bundle.main.path(forResource: "punch.wav", ofType:nil)!
+                            } else if randoClownrissian == 1 {
+                                punchPath = Bundle.main.path(forResource: "punch1.wav", ofType:nil)!
+                            } else {
+                                punchPath = Bundle.main.path(forResource: "punch2.wav", ofType:nil)!
+                            }
+                                                         
                             let url = URL(fileURLWithPath: punchPath)
                             
                             do {
+                                try AVAudioSession
                                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
                                 try AVAudioSession.sharedInstance().setActive(true)
                                 
