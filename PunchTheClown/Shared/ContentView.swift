@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVFoundation
+import GameKit
 
 let timerInterval = 0.2
 
@@ -20,12 +21,17 @@ struct ContentView: View {
     @State var xMove:CGFloat = 50.0
     @State var yMove:CGFloat = 50.0
     @State var badCounter:Int = 0
-    @State var oofCounter:Int = 0
+    @State /*@AppStorage("oofCounter")*/ var oofCounter:Int = 0
+    @AppStorage("totalPunches") var totalPunches:Int = 0
     @State var bigTopSound: AVAudioPlayer?
     @State var punchSound: AVAudioPlayer?
     @State var groan1Sound: AVAudioPlayer?
     @State var groan2Sound: AVAudioPlayer?
     @State var groan3Sound: AVAudioPlayer?
+    
+    @State var presented:Bool = true
+    
+    //@EnvironmentObject var groan: AVAudioPlayer?
     
     
     var body: some View {
@@ -35,8 +41,16 @@ struct ContentView: View {
                     .resizable()
                     .aspectRatio(geometry.size, contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
-                Text("Score: \(oofCounter)")
-                    .position(x: 50, y: 10)                    
+                VStack {
+                    HStack {
+                        Text("Game Score: \(oofCounter)")
+                        Spacer()
+                        //                    .position(x: 50, y: 10)
+                        Text("Total Score: \(totalPunches)")
+                    }
+                    Spacer()
+                }
+                
                 VStack {
                     Image(clownImage)
                         .resizable()
@@ -81,6 +95,7 @@ struct ContentView: View {
                                 }
                                 #endif
                                 oofCounter = oofCounter + 1
+                                totalPunches = totalPunches + 1
                             } catch {
                                 // couldn't load file :(
                             }
@@ -121,7 +136,7 @@ struct ContentView: View {
                         
                         punchPath = Bundle.main.path(forResource: "groan3.m4a", ofType:nil)!
                         url = URL(fileURLWithPath: punchPath)
-                        groan3Sound = try AVAudioPlayer(contentsOf: url)
+                        groan3Sound = try AVAudioPlayer(contentsOf: url)                                                
                         
                     } catch {
                         // couldn't load file :(
@@ -132,7 +147,6 @@ struct ContentView: View {
         .statusBar(hidden: true)
         
     }
- 
     
     func roam() -> Void {
         

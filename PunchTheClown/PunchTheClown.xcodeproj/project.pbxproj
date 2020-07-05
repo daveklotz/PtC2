@@ -25,6 +25,7 @@
 		F531295724AD77590027FEE5 /* groan2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F531295524AD77590027FEE5 /* groan2.m4a */; };
 		F531295824AD77590027FEE5 /* groan1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F531295624AD77590027FEE5 /* groan1.m4a */; };
 		F531295A24AFB6E70027FEE5 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = F531295924AFB6E70027FEE5 /* Background.png */; };
+		F531295E24B2509B0027FEE5 /* launch2.png in Resources */ = {isa = PBXBuildFile; fileRef = F531295D24B2509B0027FEE5 /* launch2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		F531295524AD77590027FEE5 /* groan2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = groan2.m4a; sourceTree = "<group>"; };
 		F531295624AD77590027FEE5 /* groan1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = groan1.m4a; sourceTree = "<group>"; };
 		F531295924AFB6E70027FEE5 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		F531295D24B2509B0027FEE5 /* launch2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		F51D63CF24AC58770096B2C9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F531295D24B2509B0027FEE5 /* launch2.png */,
 				F531295924AFB6E70027FEE5 /* Background.png */,
 				F531295624AD77590027FEE5 /* groan1.m4a */,
 				F531295524AD77590027FEE5 /* groan2.m4a */,
@@ -320,6 +323,7 @@
 				F51D63D324AC589E0096B2C9 /* punch.wav in Resources */,
 				F531295824AD77590027FEE5 /* groan1.m4a in Resources */,
 				F531295724AD77590027FEE5 /* groan2.m4a in Resources */,
+				F531295E24B2509B0027FEE5 /* launch2.png in Resources */,
 				F531295424AD76960027FEE5 /* groan3.m4a in Resources */,
 				F51D63DA24AC58B80096B2C9 /* groan1.wav in Resources */,
 				F51D63DB24AC58B80096B2C9 /* circus.wav in Resources */,
