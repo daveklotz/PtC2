@@ -26,6 +26,8 @@
 		F531295824AD77590027FEE5 /* groan1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F531295624AD77590027FEE5 /* groan1.m4a */; };
 		F531295A24AFB6E70027FEE5 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = F531295924AFB6E70027FEE5 /* Background.png */; };
 		F531295E24B2509B0027FEE5 /* launch2.png in Resources */ = {isa = PBXBuildFile; fileRef = F531295D24B2509B0027FEE5 /* launch2.png */; };
+		F53129AB24B3EA7C0027FEE5 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53129AA24B3EA7C0027FEE5 /* IAPManager.swift */; };
+		F53129AE24B4ECCA0027FEE5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53129AD24B4ECCA0027FEE5 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		F531295624AD77590027FEE5 /* groan1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = groan1.m4a; sourceTree = "<group>"; };
 		F531295924AFB6E70027FEE5 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		F531295D24B2509B0027FEE5 /* launch2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch2.png; sourceTree = "<group>"; };
+		F53129AA24B3EA7C0027FEE5 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		F53129AD24B4ECCA0027FEE5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F53129AE24B4ECCA0027FEE5 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +120,7 @@
 				F51D63AB24AC555C0096B2C9 /* Tests iOS */,
 				F51D63B624AC555C0096B2C9 /* Tests macOS */,
 				F51D639924AC555C0096B2C9 /* Products */,
+				F53129AC24B4ECCA0027FEE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +130,7 @@
 				F51D639124AC555B0096B2C9 /* PunchTheClownApp.swift */,
 				F51D639224AC555B0096B2C9 /* ContentView.swift */,
 				F51D639324AC555C0096B2C9 /* Assets.xcassets */,
+				F53129AA24B3EA7C0027FEE5 /* IAPManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -190,6 +197,14 @@
 				F51D63D624AC58B80096B2C9 /* groan2.wav */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F53129AC24B4ECCA0027FEE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F53129AD24B4ECCA0027FEE5 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F53129AB24B3EA7C0027FEE5 /* IAPManager.swift in Sources */,
 				F51D63BC24AC555C0096B2C9 /* ContentView.swift in Sources */,
 				F51D63BA24AC555C0096B2C9 /* PunchTheClownApp.swift in Sources */,
 			);
