@@ -77,15 +77,10 @@ struct ContentView: View {
                                 try AVAudioSession.sharedInstance().setActive(true)
                                 
                                 punchSound =  try AVAudioPlayer(contentsOf: url)
-                                #if targetEnvironment(simulator)
-                                // do nothing
-                                #else
-                                punchSound?.play()
-                                #endif
                                 
-                                #if targetEnvironment(simulator)
-                                // do nothing
-                                #else
+                                punchSound?.play()
+                                
+
                                 if oofCounter % 3 == 0 {
                                     groan1Sound?.play()
                                 } else if oofCounter % 3 == 1 {
@@ -93,7 +88,6 @@ struct ContentView: View {
                                 } else {
                                     groan3Sound?.play()
                                 }
-                                #endif
                                 oofCounter = oofCounter + 1
                                 totalPunches = totalPunches + 1
                             } catch {
@@ -120,11 +114,7 @@ struct ContentView: View {
                         
                         bigTopSound =  try AVAudioPlayer(contentsOf: url)
                         bigTopSound?.numberOfLoops = -1
-                        #if targetEnvironment(simulator)
-                        // do nothing
-                        #else
                         bigTopSound?.play()
-                        #endif
                         
                         punchPath = Bundle.main.path(forResource: "groan1.m4a", ofType:nil)!
                         url = URL(fileURLWithPath: punchPath)
@@ -210,11 +200,7 @@ struct ContentView: View {
             try AVAudioSession.sharedInstance().setActive(true)
             
             punchSound =  try AVAudioPlayer(contentsOf: url)
-            #if targetEnvironment(simulator)
-            // do nothing
-            #else
-            punchSound?.play()
-            #endif
+            punchSound?.play()            
         } catch {
             // couldn't load file :(
         }
