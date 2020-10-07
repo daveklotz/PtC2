@@ -29,7 +29,8 @@ struct ContentView: View {
     @State var groan2Sound: AVAudioPlayer?
     @State var groan3Sound: AVAudioPlayer?
     
-    @State var presented:Bool = true
+    @State var presented: Bool = true
+    @State var showingFortune: Bool = false
     
     //@EnvironmentObject var groan: AVAudioPlayer?
     
@@ -50,6 +51,8 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
+                
+                
                 
                 VStack {
                     Image(clownImage)
@@ -73,7 +76,7 @@ struct ContentView: View {
                             let url = URL(fileURLWithPath: punchPath)
                             
                             do {                                
-                                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                                try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
                                 try AVAudioSession.sharedInstance().setActive(true)
                                 
                                 punchSound =  try AVAudioPlayer(contentsOf: url)
@@ -93,6 +96,13 @@ struct ContentView: View {
                             } catch {
                                 // couldn't load file :(
                             }
+                            if oofCounter % 10 == 0 {
+                                if oofCounter == 100 {
+                                    self.showingFortune.toggle()
+                                } else {
+                                    self.showingFortune.toggle()
+                                }
+                            }
                         }
                     
                     
@@ -109,7 +119,7 @@ struct ContentView: View {
                     var url = URL(fileURLWithPath: punchPath)
                     
                     do {
-                        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                        try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
                         try AVAudioSession.sharedInstance().setActive(true)
                         
                         bigTopSound =  try AVAudioPlayer(contentsOf: url)
@@ -133,6 +143,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .sheet(isPresented: $showingFortune, content: {
+                FortuneView(showIntro: false, isPresented: $showingFortune)
+            })
         }
         .statusBar(hidden: true)
         
@@ -178,7 +191,7 @@ struct ContentView: View {
         let url = URL(fileURLWithPath: punchPath)
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
             punchSound =  try AVAudioPlayer(contentsOf: url)
@@ -196,7 +209,7 @@ struct ContentView: View {
         let url = URL(fileURLWithPath: punchPath)
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
             punchSound =  try AVAudioPlayer(contentsOf: url)
