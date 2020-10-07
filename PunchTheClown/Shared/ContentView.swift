@@ -44,9 +44,12 @@ struct ContentView: View {
                 VStack {
                     HStack {
                         Text("Game Score: \(oofCounter)")
+                            .foregroundColor(.blue)
                         Spacer()
                         //                    .position(x: 50, y: 10)
                         Text("Total Score: \(totalPunches)")
+                            .foregroundColor(.blue)
+                        
                     }
                     Spacer()
                 }
@@ -73,7 +76,7 @@ struct ContentView: View {
                             let url = URL(fileURLWithPath: punchPath)
                             
                             do {                                
-                                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                                try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
                                 try AVAudioSession.sharedInstance().setActive(true)
                                 
                                 punchSound =  try AVAudioPlayer(contentsOf: url)
@@ -109,7 +112,7 @@ struct ContentView: View {
                     var url = URL(fileURLWithPath: punchPath)
                     
                     do {
-                        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                        try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
                         try AVAudioSession.sharedInstance().setActive(true)
                         
                         bigTopSound =  try AVAudioPlayer(contentsOf: url)
@@ -178,7 +181,7 @@ struct ContentView: View {
         let url = URL(fileURLWithPath: punchPath)
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
             punchSound =  try AVAudioPlayer(contentsOf: url)
@@ -196,7 +199,7 @@ struct ContentView: View {
         let url = URL(fileURLWithPath: punchPath)
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
             punchSound =  try AVAudioPlayer(contentsOf: url)
