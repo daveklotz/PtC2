@@ -45,9 +45,12 @@ struct ContentView: View {
                 VStack {
                     HStack {
                         Text("Game Score: \(oofCounter)")
+                            .foregroundColor(.blue)
                         Spacer()
                         //                    .position(x: 50, y: 10)
                         Text("Total Score: \(totalPunches)")
+                            .foregroundColor(.blue)
+                        
                     }
                     Spacer()
                 }
