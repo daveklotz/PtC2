@@ -23,7 +23,7 @@ struct ContentView: View {
     @State var badCounter:Int = 0
     @State /*@AppStorage("oofCounter")*/ var oofCounter:Int = 0
     @AppStorage("totalPunches") var totalPunches:Int = 0
-    @State @AppStorage("showWhatsNew") var showWhatsNew: Bool = false
+    @AppStorage("showWhatsNew") var showWhatsNew: Bool = true
     @State var bigTopSound: AVAudioPlayer?
     @State var punchSound: AVAudioPlayer?
     @State var groan1Sound: AVAudioPlayer?
@@ -101,15 +101,16 @@ struct ContentView: View {
                                 // couldn't load file :(
                             }
                             if oofCounter % 10 == 0 {
+                                if oofCounter == 20 {
+                                    self.showWhatsNew = false
+                                }
                                 if oofCounter == 100 {
                                     self.showingFortune.toggle()
                                 } else {
                                     self.showingFortune.toggle()
                                 }
                             }
-                            if oofCounter == 1 {
-                                self.showWhatsNew.toggle()
-                            }
+
                         }
                     
                     
@@ -151,7 +152,9 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingFortune, content: {
-                FortuneView(showIntro: false, isPresented: $showingFortune, showWhatsNew: $showWhatsNew)
+                let intro: Bool = self.showWhatsNew
+//                self.showWhatsNew = false
+                FortuneView(showIntro: intro, isPresented: $showingFortune)
 //                    .environmentObject($showWhatsNew)
             })
 //            .sheet(isPresented: $showWhatsNew, content: {

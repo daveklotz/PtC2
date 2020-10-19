@@ -11,16 +11,17 @@ struct FortuneView: View {
     
     public var showIntro: Bool
     @Binding var isPresented: Bool
-    @Binding var showWhatsNew: Bool
     
 //    init(_ showIntro: Bool) {
 //        self.showIntro = showIntro        
 //    }
     var body: some View {
-        if self.showIntro == true {
+        if showIntro == true {
             Text("Every 100 punches Punch will tell you your fortune! After 1000 punches you'll be able to get a fortune whenever you like!!")
+//                .onAppear { self.showWhatsNew = false }
         } else {
             let fortune = FortuneTeller.shared.getFortune()
+            
             VStack {
                 Spacer()
                 Text(fortune)
@@ -57,6 +58,7 @@ struct FortuneView: View {
             }
         }
     }
+    
 }
 
 struct FortuneView_Previews: PreviewProvider {
