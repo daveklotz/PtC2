@@ -23,6 +23,7 @@ struct ContentView: View {
     @State var badCounter:Int = 0
     @State /*@AppStorage("oofCounter")*/ var oofCounter:Int = 0
     @AppStorage("totalPunches") var totalPunches:Int = 0
+    @State @AppStorage("showWhatsNew") var showWhatsNew: Bool = false
     @State var bigTopSound: AVAudioPlayer?
     @State var punchSound: AVAudioPlayer?
     @State var groan1Sound: AVAudioPlayer?
@@ -106,6 +107,9 @@ struct ContentView: View {
                                     self.showingFortune.toggle()
                                 }
                             }
+                            if oofCounter == 1 {
+                                self.showWhatsNew.toggle()
+                            }
                         }
                     
                     
@@ -147,8 +151,14 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingFortune, content: {
-                FortuneView(showIntro: false, isPresented: $showingFortune)
+                FortuneView(showIntro: false, isPresented: $showingFortune, showWhatsNew: $showWhatsNew)
+//                    .environmentObject($showWhatsNew)
             })
+//            .sheet(isPresented: $showWhatsNew, content: {
+//                FortuneView(showIntro: true, isPresented: $showWhatsNew)
+//
+//            })
+            
         }
         .statusBar(hidden: true)
         

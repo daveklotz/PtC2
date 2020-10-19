@@ -28,10 +28,6 @@
 		F531295824AD77590027FEE5 /* groan1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F531295624AD77590027FEE5 /* groan1.m4a */; };
 		F531295A24AFB6E70027FEE5 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = F531295924AFB6E70027FEE5 /* Background.png */; };
 		F531295E24B2509B0027FEE5 /* launch2.png in Resources */ = {isa = PBXBuildFile; fileRef = F531295D24B2509B0027FEE5 /* launch2.png */; };
-		F552F797253E371D0024089D /* FortuneTeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F552F796253E371D0024089D /* FortuneTeller.swift */; };
-		F552F798253E371D0024089D /* FortuneTeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F552F796253E371D0024089D /* FortuneTeller.swift */; };
-		F552F80C253E46D80024089D /* fortunes.plist in Resources */ = {isa = PBXBuildFile; fileRef = F552F80B253E46D80024089D /* fortunes.plist */; };
-		F552F80D253E46D80024089D /* fortunes.plist in Resources */ = {isa = PBXBuildFile; fileRef = F552F80B253E46D80024089D /* fortunes.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +74,6 @@
 		F531295624AD77590027FEE5 /* groan1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = groan1.m4a; sourceTree = "<group>"; };
 		F531295924AFB6E70027FEE5 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		F531295D24B2509B0027FEE5 /* launch2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch2.png; sourceTree = "<group>"; };
-		F552F796253E371D0024089D /* FortuneTeller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneTeller.swift; sourceTree = "<group>"; };
-		F552F80B253E46D80024089D /* fortunes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fortunes.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,12 +124,10 @@
 		F51D639024AC555A0096B2C9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F552F80B253E46D80024089D /* fortunes.plist */,
 				F51D639124AC555B0096B2C9 /* PunchTheClownApp.swift */,
 				F51D639224AC555B0096B2C9 /* ContentView.swift */,
 				F51D639324AC555C0096B2C9 /* Assets.xcassets */,
 				F50B9F42252D420700C7E424 /* FortuneView.swift */,
-				F552F796253E371D0024089D /* FortuneTeller.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -329,7 +321,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F51D63D424AC589E0096B2C9 /* punch2.wav in Resources */,
-				F552F80C253E46D80024089D /* fortunes.plist in Resources */,
 				F531295A24AFB6E70027FEE5 /* Background.png in Resources */,
 				F51D63D524AC589E0096B2C9 /* punch1.wav in Resources */,
 				F51D63BE24AC555C0096B2C9 /* Assets.xcassets in Resources */,
@@ -348,7 +339,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F552F80D253E46D80024089D /* fortunes.plist in Resources */,
 				F51D63BF24AC555C0096B2C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F50B9F43252D420700C7E424 /* FortuneView.swift in Sources */,
-				F552F797253E371D0024089D /* FortuneTeller.swift in Sources */,
 				F51D63BC24AC555C0096B2C9 /* ContentView.swift in Sources */,
 				F51D63BA24AC555C0096B2C9 /* PunchTheClownApp.swift in Sources */,
 			);
@@ -386,7 +375,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F50B9F44252D420700C7E424 /* FortuneView.swift in Sources */,
-				F552F798253E371D0024089D /* FortuneTeller.swift in Sources */,
 				F51D63BD24AC555C0096B2C9 /* ContentView.swift in Sources */,
 				F51D63BB24AC555C0096B2C9 /* PunchTheClownApp.swift in Sources */,
 			);
@@ -542,7 +530,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+<<<<<<< HEAD
+				CURRENT_PROJECT_VERSION = 14;
+=======
+				CURRENT_PROJECT_VERSION = 15;
+>>>>>>> master
 				DEVELOPMENT_TEAM = 93ZKW6BQ3Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -551,7 +543,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobileotis.PunchClown;
 				PRODUCT_NAME = PunchTheClown;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -566,9 +558,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 93ZKW6BQ3Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -577,10 +569,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobileotis.PunchClown;
 				PRODUCT_NAME = PunchTheClown;
-				PROVISIONING_PROFILE_SPECIFIER = "PunchClown Wildcard App Store Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
