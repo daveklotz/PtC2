@@ -29,6 +29,7 @@ struct ContentView: View {
     @State var groan1Sound: AVAudioPlayer?
     @State var groan2Sound: AVAudioPlayer?
     @State var groan3Sound: AVAudioPlayer?
+    @State var fortuneAppearsSound: AVAudioPlayer?
     
     @State var presented: Bool = true
     @State var showingFortune: Bool = false
@@ -54,6 +55,15 @@ struct ContentView: View {
                         
                     }
                     Spacer()
+                    if self.totalPunches > 57 {
+                        Button(action: {
+                            self.pauseBigTopsSounds()
+                            self.showingFortune.toggle()
+                            
+                        }) {
+                            Text("Show Me A Fortune!!")
+                        }
+                    }
                 }
                 
                 
@@ -64,6 +74,8 @@ struct ContentView: View {
                         .frame(width: 302, height: 450, alignment: .center)
                         .aspectRatio(contentMode: .fill)
                         .onTapGesture {
+                            self.showWhatsNew = false ///REMOVE
+                            
                             self.clownImage = "punchedclown"
                             
                             let randoClownrissian = Int.random(in: 0..<3)
@@ -100,9 +112,10 @@ struct ContentView: View {
                             } catch {
                                 // couldn't load file :(
                             }
-                            if oofCounter % 10 == 0 {
+                            if oofCounter % 2 == 0 {
+                                self.pauseBigTopsSounds()
                                 if oofCounter == 20 {
-                                    self.showWhatsNew = false
+                                    self.showWhatsNew = true
                                 }
                                 if oofCounter == 100 {
                                     self.showingFortune.toggle()
@@ -144,19 +157,26 @@ struct ContentView: View {
                         
                         punchPath = Bundle.main.path(forResource: "groan3.m4a", ofType:nil)!
                         url = URL(fileURLWithPath: punchPath)
-                        groan3Sound = try AVAudioPlayer(contentsOf: url)                                                
+                        groan3Sound = try AVAudioPlayer(contentsOf: url)
+                        
+                        punchPath = Bundle.main.path(forResource: "chimes.m4a", ofType:nil)!
+                        url = URL(fileURLWithPath: punchPath)
+                        fortuneAppearsSound = try AVAudioPlayer(contentsOf: url)
                         
                     } catch {
                         // couldn't load file :(
                     }
                 }
-            }
-            .sheet(isPresented: $showingFortune, content: {
+            }.sheet(isPresented: $showingFortune, onDismiss: {
+                self.restartBigTop()
+            }, content: {
                 let intro: Bool = self.showWhatsNew
 //                self.showWhatsNew = false
                 FortuneView(showIntro: intro, isPresented: $showingFortune)
 //                    .environmentObject($showWhatsNew)
-            })
+            }).onAppear {
+                self.playFortuneSounds()
+            }
 //            .sheet(isPresented: $showWhatsNew, content: {
 //                FortuneView(showIntro: true, isPresented: $showWhatsNew)
 //
@@ -165,6 +185,19 @@ struct ContentView: View {
         }
         .statusBar(hidden: true)
         
+    }
+    func playFortuneSounds() -> Void {
+        // play sounds
+    }
+    
+    func pauseBigTopsSounds() -> Void {
+        self.bigTopSound?.stop()
+        self.fortuneAppearsSound?.play()
+    }
+    
+    func restartBigTop() -> Void {
+        self.bigTopSound?.play()
+        self.fortuneAppearsSound?.stop()
     }
     
     func roam() -> Void {

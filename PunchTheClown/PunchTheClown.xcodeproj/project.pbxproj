@@ -32,6 +32,8 @@
 		F552F798253E371D0024089D /* FortuneTeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F552F796253E371D0024089D /* FortuneTeller.swift */; };
 		F552F80C253E46D80024089D /* fortunes.plist in Resources */ = {isa = PBXBuildFile; fileRef = F552F80B253E46D80024089D /* fortunes.plist */; };
 		F552F80D253E46D80024089D /* fortunes.plist in Resources */ = {isa = PBXBuildFile; fileRef = F552F80B253E46D80024089D /* fortunes.plist */; };
+		F552F81725409F1F0024089D /* chimes.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F552F81625409F1F0024089D /* chimes.m4a */; };
+		F552F81825409F1F0024089D /* chimes.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F552F81625409F1F0024089D /* chimes.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,7 @@
 		F531295D24B2509B0027FEE5 /* launch2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch2.png; sourceTree = "<group>"; };
 		F552F796253E371D0024089D /* FortuneTeller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneTeller.swift; sourceTree = "<group>"; };
 		F552F80B253E46D80024089D /* fortunes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fortunes.plist; sourceTree = "<group>"; };
+		F552F81625409F1F0024089D /* chimes.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = chimes.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,7 @@
 		F51D63CF24AC58770096B2C9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F552F81625409F1F0024089D /* chimes.m4a */,
 				F531295D24B2509B0027FEE5 /* launch2.png */,
 				F531295924AFB6E70027FEE5 /* Background.png */,
 				F531295624AD77590027FEE5 /* groan1.m4a */,
@@ -329,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F51D63D424AC589E0096B2C9 /* punch2.wav in Resources */,
+				F552F81725409F1F0024089D /* chimes.m4a in Resources */,
 				F552F80C253E46D80024089D /* fortunes.plist in Resources */,
 				F531295A24AFB6E70027FEE5 /* Background.png in Resources */,
 				F51D63D524AC589E0096B2C9 /* punch1.wav in Resources */,
@@ -349,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F552F80D253E46D80024089D /* fortunes.plist in Resources */,
+				F552F81825409F1F0024089D /* chimes.m4a in Resources */,
 				F51D63BF24AC555C0096B2C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,7 +548,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 93ZKW6BQ3Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -568,7 +574,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 93ZKW6BQ3Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;

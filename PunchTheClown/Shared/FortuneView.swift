@@ -58,7 +58,6 @@ struct FortuneView: View {
             }
         }
     }
-    
 }
 
 struct FortuneView_Previews: PreviewProvider {
