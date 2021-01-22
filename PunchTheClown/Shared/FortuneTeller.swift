@@ -25,9 +25,7 @@ class FortuneTeller {
         var fortune: String = "Don't take any wooden nickles"
         
         let randomInt = Int.random(in: 1..<5458)
-        
         fortune = self.fortuneArray[randomInt]
-        
         
         return fortune
     }

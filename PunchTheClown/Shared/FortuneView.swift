@@ -18,6 +18,8 @@ struct FortuneView: View {
     var body: some View {
         if showIntro == true {
             Text("Every 100 punches Punch will tell you your fortune! After 1000 punches you'll be able to get a fortune whenever you like!!")
+                .padding(.leading, 50)
+                .padding(.trailing, 50)
 //                .onAppear { self.showWhatsNew = false }
         } else {
             let fortune = FortuneTeller.shared.getFortune()
@@ -25,6 +27,9 @@ struct FortuneView: View {
             VStack {
                 Spacer()
                 Text(fortune)
+                    .padding(.leading, 50)
+                    .padding(.trailing, 50)
+                    
                 Spacer()
                 Text("Was this fortune useful?")
                 HStack {
