@@ -11,21 +11,26 @@ class FortuneTeller {
     
     static let shared = FortuneTeller()
     
-    let fortuneArray: Array<String>
+    let fortuneStrings: Array<String>
+    var fortuneArray: Array<Fortune> = [Fortune]()
     
     private init() {
         let url = Bundle.main.url(forResource: "fortunes", withExtension: "plist")!
         let fortunesData = try! Data(contentsOf: url)
-        self.fortuneArray = try! PropertyListSerialization.propertyList(from: fortunesData, options: [], format: nil) as! [String]
+        self.fortuneStrings = try! PropertyListSerialization.propertyList(from: fortunesData, options: [], format: nil) as! [String]
         
-        NSLog(self.fortuneArray[1])
+        for index in 0..<self.fortuneStrings.count {
+            self.fortuneArray.append(Fortune(id: index, fortuneString: self.fortuneStrings[index]))
+        }
+        
+        NSLog(self.fortuneArray[1].description)
     }
     
     public func getFortune() -> String {
         var fortune: String = "Don't take any wooden nickles"
         
         let randomInt = Int.random(in: 1..<5458)
-        fortune = self.fortuneArray[randomInt]
+        fortune = self.fortuneArray[randomInt].description
         
         return fortune
     }

@@ -34,6 +34,10 @@
 		F552F80D253E46D80024089D /* fortunes.plist in Resources */ = {isa = PBXBuildFile; fileRef = F552F80B253E46D80024089D /* fortunes.plist */; };
 		F552F81725409F1F0024089D /* chimes.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F552F81625409F1F0024089D /* chimes.m4a */; };
 		F552F81825409F1F0024089D /* chimes.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F552F81625409F1F0024089D /* chimes.m4a */; };
+		F5F17EF725BA59B100308573 /* ClownSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17EF625BA59B100308573 /* ClownSoundPlayer.swift */; };
+		F5F17EF825BA59B100308573 /* ClownSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17EF625BA59B100308573 /* ClownSoundPlayer.swift */; };
+		F5F17F0725BB792300308573 /* FortuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F0625BB792300308573 /* FortuneModel.swift */; };
+		F5F17F0825BB792300308573 /* FortuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F0625BB792300308573 /* FortuneModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,8 @@
 		F552F796253E371D0024089D /* FortuneTeller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneTeller.swift; sourceTree = "<group>"; };
 		F552F80B253E46D80024089D /* fortunes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fortunes.plist; sourceTree = "<group>"; };
 		F552F81625409F1F0024089D /* chimes.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = chimes.m4a; sourceTree = "<group>"; };
+		F5F17EF625BA59B100308573 /* ClownSoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClownSoundPlayer.swift; sourceTree = "<group>"; };
+		F5F17F0625BB792300308573 /* FortuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,8 @@
 				F51D639324AC555C0096B2C9 /* Assets.xcassets */,
 				F50B9F42252D420700C7E424 /* FortuneView.swift */,
 				F552F796253E371D0024089D /* FortuneTeller.swift */,
+				F5F17EF625BA59B100308573 /* ClownSoundPlayer.swift */,
+				F5F17F0625BB792300308573 /* FortuneModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -380,8 +388,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F17EF725BA59B100308573 /* ClownSoundPlayer.swift in Sources */,
 				F50B9F43252D420700C7E424 /* FortuneView.swift in Sources */,
 				F552F797253E371D0024089D /* FortuneTeller.swift in Sources */,
+				F5F17F0725BB792300308573 /* FortuneModel.swift in Sources */,
 				F51D63BC24AC555C0096B2C9 /* ContentView.swift in Sources */,
 				F51D63BA24AC555C0096B2C9 /* PunchTheClownApp.swift in Sources */,
 			);
@@ -391,8 +401,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F17EF825BA59B100308573 /* ClownSoundPlayer.swift in Sources */,
 				F50B9F44252D420700C7E424 /* FortuneView.swift in Sources */,
 				F552F798253E371D0024089D /* FortuneTeller.swift in Sources */,
+				F5F17F0825BB792300308573 /* FortuneModel.swift in Sources */,
 				F51D63BD24AC555C0096B2C9 /* ContentView.swift in Sources */,
 				F51D63BB24AC555C0096B2C9 /* PunchTheClownApp.swift in Sources */,
 			);
