@@ -11,18 +11,28 @@ class FortuneTeller {
     
     static let shared = FortuneTeller()
     
-    let fortuneStrings: Array<String>
+    
     //@AppStorage("fortuneArray")
     var fortuneArray: Array<Fortune> = [Fortune]()
     
     private init() {
-        let url = Bundle.main.url(forResource: "fortunes", withExtension: "plist")!
-        let fortunesData = try! Data(contentsOf: url)
-        self.fortuneStrings = try! PropertyListSerialization.propertyList(from: fortunesData, options: [], format: nil) as! [String]
+
         
-        for index in 0..<self.fortuneStrings.count {
-            self.fortuneArray.append(Fortune(id: index, fortuneString: self.fortuneStrings[index]))
+        do {
+            try fortuneArray = StorageHelper.retrieve("fortunes.json", from: .documents, as: [Fortune].self)
+        } catch  {
+            //No file so build from scratch
+            
+            let fortuneStrings: Array<String>
+            let url = Bundle.main.url(forResource: "fortunes", withExtension: "plist")!
+            let fortunesData = try! Data(contentsOf: url)
+            fortuneStrings = try! PropertyListSerialization.propertyList(from: fortunesData, options: [], format: nil) as! [String]
+            
+            for index in 0..<fortuneStrings.count {
+                self.fortuneArray.append(Fortune(id: index, fortuneString: fortuneStrings[index]))
+            }
         }
+        
         
         NSLog(self.fortuneArray[1].description)
     }
@@ -50,8 +60,18 @@ class FortuneTeller {
     public func fortuneHelpful(fortune: Fortune, wasHelpful: Bool) {
         if wasHelpful {
             self.fortuneArray[fortune.id].helpfulYes += 1
+            do {
+                try StorageHelper.store(self.fortuneArray, to: .documents, as: "fortunes.json")
+            } catch  {
+                //uh oh
+            }
         } else {
             self.fortuneArray[fortune.id].helpfulNo += 1
+            do {
+                try StorageHelper.store(self.fortuneArray, to: .documents, as: "fortunes.json")
+            } catch  {
+                //uh oh
+            }
         }
         
     }

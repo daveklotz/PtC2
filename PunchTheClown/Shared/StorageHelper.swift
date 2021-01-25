@@ -1,8 +1,8 @@
 //
 //  StorageHelper.swift
 //  PunchTheClown
-//
-//
+// Originally from https://medium.com/@sdrzn/swift-4-codable-lets-make-things-even-easier-c793b6cf29e1
+// used modified version https://gist.github.com/saoudrizwan/b7ab1febde724c6f30d8a555ea779140#gistcomment-2735074
 //
 
 import Foundation

@@ -118,7 +118,7 @@ struct ContentView: View {
                             oofCounter = oofCounter + 1
                             totalPunches = totalPunches + 1
                             
-                            if oofCounter % 2 == 0 {
+                            if oofCounter % 20 == 0 {
                                 self.pauseBigTopsSounds()
                                 if oofCounter == 20 {
                                     self.showWhatsNew = true

@@ -82,7 +82,7 @@ struct PersonalityJudge {
             let result = sentimentPredictor.predictedLabel(for: document) {
             
             if result == "y" {
-                personalityEntry = personalityEntry + 8
+                personalityEntry = personalityEntry + 1
             }
             
         }
