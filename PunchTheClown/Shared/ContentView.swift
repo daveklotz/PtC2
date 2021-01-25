@@ -50,12 +50,26 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     HStack {
-                        Text("Game Score: \(oofCounter)")
-                            .foregroundColor(.blue)
+                        VStack {
+                            Text("Game Score: \(oofCounter)")
+                                .foregroundColor(.blue)
+                                .font(.footnote)
+                            Text("Total Score: \(totalPunches)")
+                                .foregroundColor(.blue)
+                                .font(.footnote)
+                        }
+                        .padding()
                         Spacer()
                         //                    .position(x: 50, y: 10)
-                        Text("Total Score: \(totalPunches)")
-                            .foregroundColor(.blue)
+                        Button(action: {
+                            self.pauseBigTopsSounds()
+                            self.activeSheet = .settingsScreen
+                            
+                            
+                        }) {
+                            Image(systemName: "gearshape")
+                                .padding()
+                        }
                         
                     }
                     Spacer()
@@ -64,22 +78,24 @@ struct ContentView: View {
                             Button(action: {
                                 self.pauseBigTopsSounds()
 //                                self.showingFortune.toggle()
-                                self.activeSheet = .first
+                                self.activeSheet = .fortuneScreen
                                 
                                 
                             }) {
                                 Text("Show Me A Fortune!!")
                             }
+                            .padding()
                             Spacer()
                             Button(action: {
                                 self.pauseBigTopsSounds()
 //                                self.showingPersonality.toggle()
-                                self.activeSheet = .second
+                                self.activeSheet = .personalityScreen
                                 
                                 
                             }) {
                                 Text("My Personality")
                             }
+                            .padding()
                         }
                     }
                 }
@@ -109,10 +125,10 @@ struct ContentView: View {
                                 }
                                 if oofCounter == 100 {
                                     self.showingFortune.toggle()
-                                    self.activeSheet = .first
+                                    self.activeSheet = .fortuneScreen
                                 } else {
                                     self.showingFortune.toggle()
-                                    self.activeSheet = .first
+                                    self.activeSheet = .personalityScreen
                                 }
                             }
                         }
@@ -136,13 +152,15 @@ struct ContentView: View {
             }, content: { item in
                 let intro: Bool = self.showWhatsNew
                 
-                if item == .first {
+                if item == .fortuneScreen {
                     FortuneView(showIntro: intro, isPresented: $activeSheet)
                         .onAppear {
                             self.playFortuneSounds()
                         }
+                } else if item == .personalityScreen {
+                    PersonalityView()                    
                 } else {
-                    PersonalityView()
+                    SettingsView()
                 }
                 
             })

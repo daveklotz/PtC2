@@ -5,13 +5,14 @@
 //  Created by David Klotz on 10/19/20.
 //
 
-import Foundation
+import SwiftUI
 
 class FortuneTeller {
     
     static let shared = FortuneTeller()
     
     let fortuneStrings: Array<String>
+    //@AppStorage("fortuneArray")
     var fortuneArray: Array<Fortune> = [Fortune]()
     
     private init() {
@@ -40,6 +41,8 @@ class FortuneTeller {
         var helpfulFortunes: [Fortune] = [Fortune]()
         
         helpfulFortunes = self.fortuneArray.filter { $0.helpfulYes >= 1 }
+        
+        //helpfulFortunes = Array(self.fortuneArray[0..<100])
         
         return helpfulFortunes
     }

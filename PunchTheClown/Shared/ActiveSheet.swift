@@ -8,7 +8,7 @@
 import Foundation
 
 enum ActiveSheet: Identifiable {
-    case first, second
+    case fortuneScreen, personalityScreen, settingsScreen
     
     var id: Int {
         hashValue

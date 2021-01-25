@@ -69,6 +69,6 @@ struct FortuneView: View {
 
 struct FortuneView_Previews: PreviewProvider {
     static var previews: some View {
-        FortuneView(showIntro: false, isPresented: .constant(.first))
+        FortuneView(showIntro: false, isPresented: .constant(.fortuneScreen))
     }
 }
