@@ -10,7 +10,7 @@ import SwiftUI
 struct FortuneView: View {
     
     public var showIntro: Bool
-    @Binding var isPresented: Bool
+    @Binding var isPresented: ActiveSheet?
     
 //    init(_ showIntro: Bool) {
 //        self.showIntro = showIntro        
@@ -26,7 +26,7 @@ struct FortuneView: View {
             
             VStack {
                 Spacer()
-                Text(fortune)
+                Text(fortune.description)
                     .padding(.leading, 50)
                     .padding(.trailing, 50)
                     
@@ -35,8 +35,9 @@ struct FortuneView: View {
                 HStack {
                     Spacer()
                     Button(action: {
+                        FortuneTeller.shared.fortuneHelpful(fortune: fortune, wasHelpful: true)
                         // Dismiss
-                        self.isPresented = false
+                        self.isPresented = nil
                     
                     }) {
                         Text("Yes!")
@@ -47,8 +48,9 @@ struct FortuneView: View {
                     .animation(.default)
                     Spacer()
                     Button(action: {
+                        FortuneTeller.shared.fortuneHelpful(fortune: fortune, wasHelpful: false)
                         //Dismiss
-                        self.isPresented = false
+                        self.isPresented = nil
                         
                     }) {
                         Text("No...")
@@ -67,6 +69,6 @@ struct FortuneView: View {
 
 struct FortuneView_Previews: PreviewProvider {
     static var previews: some View {
-        FortuneView(showIntro: false, isPresented: .constant(false))
+        FortuneView(showIntro: false, isPresented: .constant(.first))
     }
 }

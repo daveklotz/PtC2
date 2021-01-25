@@ -38,6 +38,14 @@
 		F5F17EF825BA59B100308573 /* ClownSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17EF625BA59B100308573 /* ClownSoundPlayer.swift */; };
 		F5F17F0725BB792300308573 /* FortuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F0625BB792300308573 /* FortuneModel.swift */; };
 		F5F17F0825BB792300308573 /* FortuneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F0625BB792300308573 /* FortuneModel.swift */; };
+		F5F17F0E25BF388600308573 /* PersonalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F0D25BF388500308573 /* PersonalityView.swift */; };
+		F5F17F0F25BF388600308573 /* PersonalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F0D25BF388500308573 /* PersonalityView.swift */; };
+		F5F17F1525BF404600308573 /* ActiveSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F1425BF404600308573 /* ActiveSheet.swift */; };
+		F5F17F1625BF404600308573 /* ActiveSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F1425BF404600308573 /* ActiveSheet.swift */; };
+		F5F17F1C25BF43C900308573 /* PersonalityJudge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F1B25BF43C900308573 /* PersonalityJudge.swift */; };
+		F5F17F1D25BF43C900308573 /* PersonalityJudge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F1B25BF43C900308573 /* PersonalityJudge.swift */; };
+		F5F17F2725BF45EA00308573 /* ML Models in Resources */ = {isa = PBXBuildFile; fileRef = F5F17F2625BF45EA00308573 /* ML Models */; };
+		F5F17F2825BF45EA00308573 /* ML Models in Resources */ = {isa = PBXBuildFile; fileRef = F5F17F2625BF45EA00308573 /* ML Models */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +97,10 @@
 		F552F81625409F1F0024089D /* chimes.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = chimes.m4a; sourceTree = "<group>"; };
 		F5F17EF625BA59B100308573 /* ClownSoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClownSoundPlayer.swift; sourceTree = "<group>"; };
 		F5F17F0625BB792300308573 /* FortuneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneModel.swift; sourceTree = "<group>"; };
+		F5F17F0D25BF388500308573 /* PersonalityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityView.swift; sourceTree = "<group>"; };
+		F5F17F1425BF404600308573 /* ActiveSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSheet.swift; sourceTree = "<group>"; };
+		F5F17F1B25BF43C900308573 /* PersonalityJudge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityJudge.swift; sourceTree = "<group>"; };
+		F5F17F2625BF45EA00308573 /* ML Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "ML Models"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,9 +156,13 @@
 				F51D639224AC555B0096B2C9 /* ContentView.swift */,
 				F51D639324AC555C0096B2C9 /* Assets.xcassets */,
 				F50B9F42252D420700C7E424 /* FortuneView.swift */,
-				F552F796253E371D0024089D /* FortuneTeller.swift */,
 				F5F17EF625BA59B100308573 /* ClownSoundPlayer.swift */,
 				F5F17F0625BB792300308573 /* FortuneModel.swift */,
+				F5F17F0D25BF388500308573 /* PersonalityView.swift */,
+				F5F17F1425BF404600308573 /* ActiveSheet.swift */,
+				F552F796253E371D0024089D /* FortuneTeller.swift */,
+				F5F17F1B25BF43C900308573 /* PersonalityJudge.swift */,
+				F5F17F2625BF45EA00308573 /* ML Models */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -347,6 +363,7 @@
 				F51D63D524AC589E0096B2C9 /* punch1.wav in Resources */,
 				F51D63BE24AC555C0096B2C9 /* Assets.xcassets in Resources */,
 				F51D63D324AC589E0096B2C9 /* punch.wav in Resources */,
+				F5F17F2725BF45EA00308573 /* ML Models in Resources */,
 				F531295824AD77590027FEE5 /* groan1.m4a in Resources */,
 				F531295724AD77590027FEE5 /* groan2.m4a in Resources */,
 				F531295E24B2509B0027FEE5 /* launch2.png in Resources */,
@@ -363,6 +380,7 @@
 			files = (
 				F552F80D253E46D80024089D /* fortunes.plist in Resources */,
 				F552F81825409F1F0024089D /* chimes.m4a in Resources */,
+				F5F17F2825BF45EA00308573 /* ML Models in Resources */,
 				F51D63BF24AC555C0096B2C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,11 +406,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F17F0E25BF388600308573 /* PersonalityView.swift in Sources */,
+				F5F17F1525BF404600308573 /* ActiveSheet.swift in Sources */,
 				F5F17EF725BA59B100308573 /* ClownSoundPlayer.swift in Sources */,
 				F50B9F43252D420700C7E424 /* FortuneView.swift in Sources */,
 				F552F797253E371D0024089D /* FortuneTeller.swift in Sources */,
 				F5F17F0725BB792300308573 /* FortuneModel.swift in Sources */,
 				F51D63BC24AC555C0096B2C9 /* ContentView.swift in Sources */,
+				F5F17F1C25BF43C900308573 /* PersonalityJudge.swift in Sources */,
 				F51D63BA24AC555C0096B2C9 /* PunchTheClownApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,11 +422,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F17F0F25BF388600308573 /* PersonalityView.swift in Sources */,
+				F5F17F1625BF404600308573 /* ActiveSheet.swift in Sources */,
 				F5F17EF825BA59B100308573 /* ClownSoundPlayer.swift in Sources */,
 				F50B9F44252D420700C7E424 /* FortuneView.swift in Sources */,
 				F552F798253E371D0024089D /* FortuneTeller.swift in Sources */,
 				F5F17F0825BB792300308573 /* FortuneModel.swift in Sources */,
 				F51D63BD24AC555C0096B2C9 /* ContentView.swift in Sources */,
+				F5F17F1D25BF43C900308573 /* PersonalityJudge.swift in Sources */,
 				F51D63BB24AC555C0096B2C9 /* PunchTheClownApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

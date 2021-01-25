@@ -26,12 +26,30 @@ class FortuneTeller {
         NSLog(self.fortuneArray[1].description)
     }
     
-    public func getFortune() -> String {
-        var fortune: String = "Don't take any wooden nickles"
+    public func getFortune() -> Fortune {
+        var fortune: Fortune
         
         let randomInt = Int.random(in: 1..<5458)
-        fortune = self.fortuneArray[randomInt].description
+        fortune = self.fortuneArray[randomInt]
         
         return fortune
+    }
+    
+    public func getHelpfulFortunes() -> [Fortune] {
+        
+        var helpfulFortunes: [Fortune] = [Fortune]()
+        
+        helpfulFortunes = self.fortuneArray.filter { $0.helpfulYes >= 1 }
+        
+        return helpfulFortunes
+    }
+    
+    public func fortuneHelpful(fortune: Fortune, wasHelpful: Bool) {
+        if wasHelpful {
+            self.fortuneArray[fortune.id].helpfulYes += 1
+        } else {
+            self.fortuneArray[fortune.id].helpfulNo += 1
+        }
+        
     }
 }

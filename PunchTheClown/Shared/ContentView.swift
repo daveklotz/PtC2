@@ -14,6 +14,8 @@ let timerInterval = 0.2
 let theTimer =  Timer.publish(every: timerInterval, on: .main, in: .default).autoconnect()
 
 
+
+
 struct ContentView: View {
     @State private var clownPosition:CGPoint = CGPoint(x: 0.0, y: 150.0)
     @State private var clownImage:String = "clown"
@@ -33,6 +35,8 @@ struct ContentView: View {
     
     @State var presented: Bool = true
     @State var showingFortune: Bool = false
+    @State var showingPersonality: Bool = false
+    @State var activeSheet: ActiveSheet?
     
     //@EnvironmentObject var groan: AVAudioPlayer?
     
@@ -55,13 +59,27 @@ struct ContentView: View {
                         
                     }
                     Spacer()
-                    if self.totalPunches > 57 {
-                        Button(action: {
-                            self.pauseBigTopsSounds()
-                            self.showingFortune.toggle()
-                            
-                        }) {
-                            Text("Show Me A Fortune!!")
+                    if self.totalPunches > 40 {
+                        HStack {
+                            Button(action: {
+                                self.pauseBigTopsSounds()
+//                                self.showingFortune.toggle()
+                                self.activeSheet = .first
+                                
+                                
+                            }) {
+                                Text("Show Me A Fortune!!")
+                            }
+                            Spacer()
+                            Button(action: {
+                                self.pauseBigTopsSounds()
+//                                self.showingPersonality.toggle()
+                                self.activeSheet = .second
+                                
+                                
+                            }) {
+                                Text("My Personality")
+                            }
                         }
                     }
                 }
@@ -91,8 +109,10 @@ struct ContentView: View {
                                 }
                                 if oofCounter == 100 {
                                     self.showingFortune.toggle()
+                                    self.activeSheet = .first
                                 } else {
                                     self.showingFortune.toggle()
+                                    self.activeSheet = .first
                                 }
                             }
                         }
@@ -107,20 +127,39 @@ struct ContentView: View {
                     ClownSoundPlayer.shared.playBigtopSound()
                     
                 }
-            }.sheet(isPresented: $showingFortune, onDismiss: {
-                self.restartBigTop()
-            }, content: {
-                let intro: Bool = self.showWhatsNew
-//                self.showWhatsNew = false
-                FortuneView(showIntro: intro, isPresented: $showingFortune)
-//                    .environmentObject($showWhatsNew)
-            }).onAppear {
-                self.playFortuneSounds()
             }
-//            .sheet(isPresented: $showWhatsNew, content: {
-//                FortuneView(showIntro: true, isPresented: $showWhatsNew)
-//
-//            })
+            
+            
+            .sheet(item: $activeSheet, onDismiss: {
+                self.restartBigTop()
+                self.activeSheet = nil
+            }, content: { item in
+                let intro: Bool = self.showWhatsNew
+                
+                if item == .first {
+                    FortuneView(showIntro: intro, isPresented: $activeSheet)
+                        .onAppear {
+                            self.playFortuneSounds()
+                        }
+                } else {
+                    PersonalityView()
+                }
+                
+            })
+//            .onAppear {
+//                self.playFortuneSounds()
+//            }
+//            //            .sheet(isPresented: $showWhatsNew, content: {
+//            //                FortuneView(showIntro: true, isPresented: $showWhatsNew)
+//            //
+//            //            })
+//            .sheet(isPresented: $showingPersonality, onDismiss: {
+//                self.restartBigTop()
+//            }, content: {
+//                PersonalityView()
+//            }).onAppear {
+//                self.playFortuneSounds()
+//            }
             
         }
         .statusBar(hidden: true)
