@@ -73,7 +73,7 @@ struct ContentView: View {
                         
                     }
                     Spacer()
-                    if self.totalPunches > 40 {
+                    if self.totalPunches > 99 {
                         HStack {
                             Button(action: {
                                 self.pauseBigTopsSounds()
@@ -120,16 +120,17 @@ struct ContentView: View {
                             
                             if oofCounter % 20 == 0 {
                                 self.pauseBigTopsSounds()
-                                if oofCounter == 20 {
+                                self.activeSheet = .fortuneScreen
+                                if totalPunches == 20 {
                                     self.showWhatsNew = true
                                 }
-                                if oofCounter == 100 {
-                                    self.showingFortune.toggle()
-                                    self.activeSheet = .fortuneScreen
-                                } else {
-                                    self.showingFortune.toggle()
-                                    self.activeSheet = .personalityScreen
-                                }
+//                                if oofCounter == 100 {
+//                                    self.showingFortune.toggle()
+//                                    self.activeSheet = .fortuneScreen
+//                                } else {
+//                                    self.showingFortune.toggle()
+//                                    self.activeSheet = .personalityScreen
+//                                }
                             }
                         }
                 }

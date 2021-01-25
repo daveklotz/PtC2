@@ -17,7 +17,7 @@ struct FortuneView: View {
 //    }
     var body: some View {
         if showIntro == true {
-            Text("Every 100 punches Punch will tell you your fortune! After 1000 punches you'll be able to get a fortune whenever you like!!")
+            Text("Every 20 punches Punch will tell you your fortune! After 100 punches you'll be able to get a fortune whenever you like!!")
                 .padding(.leading, 50)
                 .padding(.trailing, 50)
 //                .onAppear { self.showWhatsNew = false }
