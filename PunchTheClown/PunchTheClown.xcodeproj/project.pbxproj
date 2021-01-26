@@ -50,8 +50,6 @@
 		F5F17F1625BF404600308573 /* ActiveSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F1425BF404600308573 /* ActiveSheet.swift */; };
 		F5F17F1C25BF43C900308573 /* PersonalityJudge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F1B25BF43C900308573 /* PersonalityJudge.swift */; };
 		F5F17F1D25BF43C900308573 /* PersonalityJudge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F1B25BF43C900308573 /* PersonalityJudge.swift */; };
-		F5F17F2725BF45EA00308573 /* ML Models in Resources */ = {isa = PBXBuildFile; fileRef = F5F17F2625BF45EA00308573 /* ML Models */; };
-		F5F17F2825BF45EA00308573 /* ML Models in Resources */ = {isa = PBXBuildFile; fileRef = F5F17F2625BF45EA00308573 /* ML Models */; };
 		F5F17F3225BF4A4300308573 /* OPN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F2D25BF4A4300308573 /* OPN.mlmodel */; };
 		F5F17F3325BF4A4300308573 /* EXT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F2E25BF4A4300308573 /* EXT.mlmodel */; };
 		F5F17F3425BF4A4300308573 /* CON.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F5F17F2F25BF4A4300308573 /* CON.mlmodel */; };
@@ -114,12 +112,11 @@
 		F5F17F0D25BF388500308573 /* PersonalityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityView.swift; sourceTree = "<group>"; };
 		F5F17F1425BF404600308573 /* ActiveSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSheet.swift; sourceTree = "<group>"; };
 		F5F17F1B25BF43C900308573 /* PersonalityJudge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityJudge.swift; sourceTree = "<group>"; };
-		F5F17F2625BF45EA00308573 /* ML Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "ML Models"; sourceTree = "<group>"; };
-		F5F17F2D25BF4A4300308573 /* OPN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = OPN.mlmodel; path = "Shared/ML Models/OPN.mlmodel"; sourceTree = "<group>"; };
-		F5F17F2E25BF4A4300308573 /* EXT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = EXT.mlmodel; path = "Shared/ML Models/EXT.mlmodel"; sourceTree = "<group>"; };
-		F5F17F2F25BF4A4300308573 /* CON.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CON.mlmodel; path = "Shared/ML Models/CON.mlmodel"; sourceTree = "<group>"; };
-		F5F17F3025BF4A4300308573 /* NEU.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = NEU.mlmodel; path = "Shared/ML Models/NEU.mlmodel"; sourceTree = "<group>"; };
-		F5F17F3125BF4A4300308573 /* AGR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = AGR.mlmodel; path = "Shared/ML Models/AGR.mlmodel"; sourceTree = "<group>"; };
+		F5F17F2D25BF4A4300308573 /* OPN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = OPN.mlmodel; sourceTree = "<group>"; };
+		F5F17F2E25BF4A4300308573 /* EXT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = EXT.mlmodel; sourceTree = "<group>"; };
+		F5F17F2F25BF4A4300308573 /* CON.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CON.mlmodel; sourceTree = "<group>"; };
+		F5F17F3025BF4A4300308573 /* NEU.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NEU.mlmodel; sourceTree = "<group>"; };
+		F5F17F3125BF4A4300308573 /* AGR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AGR.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,11 +154,7 @@
 		F51D638B24AC555A0096B2C9 = {
 			isa = PBXGroup;
 			children = (
-				F5F17F3125BF4A4300308573 /* AGR.mlmodel */,
-				F5F17F2F25BF4A4300308573 /* CON.mlmodel */,
-				F5F17F2E25BF4A4300308573 /* EXT.mlmodel */,
-				F5F17F3025BF4A4300308573 /* NEU.mlmodel */,
-				F5F17F2D25BF4A4300308573 /* OPN.mlmodel */,
+				F5DB02CB25C0D074005A4F3C /* ML Models */,
 				F51D63CF24AC58770096B2C9 /* Resources */,
 				F51D639024AC555A0096B2C9 /* Shared */,
 				F51D639A24AC555C0096B2C9 /* iOS */,
@@ -185,7 +178,6 @@
 				F5F17F1425BF404600308573 /* ActiveSheet.swift */,
 				F552F796253E371D0024089D /* FortuneTeller.swift */,
 				F5F17F1B25BF43C900308573 /* PersonalityJudge.swift */,
-				F5F17F2625BF45EA00308573 /* ML Models */,
 				F5DB029B25BF7B4A005A4F3C /* StorageHelper.swift */,
 			);
 			path = Shared;
@@ -273,6 +265,18 @@
 				F5DB029025BF648F005A4F3C /* personalities.plist */,
 			);
 			path = "Data Files";
+			sourceTree = "<group>";
+		};
+		F5DB02CB25C0D074005A4F3C /* ML Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5F17F3125BF4A4300308573 /* AGR.mlmodel */,
+				F5F17F2F25BF4A4300308573 /* CON.mlmodel */,
+				F5F17F2E25BF4A4300308573 /* EXT.mlmodel */,
+				F5F17F3025BF4A4300308573 /* NEU.mlmodel */,
+				F5F17F2D25BF4A4300308573 /* OPN.mlmodel */,
+			);
+			path = "ML Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,7 +410,6 @@
 				F51D63D524AC589E0096B2C9 /* punch1.wav in Resources */,
 				F51D63BE24AC555C0096B2C9 /* Assets.xcassets in Resources */,
 				F51D63D324AC589E0096B2C9 /* punch.wav in Resources */,
-				F5F17F2725BF45EA00308573 /* ML Models in Resources */,
 				F531295824AD77590027FEE5 /* groan1.m4a in Resources */,
 				F531295724AD77590027FEE5 /* groan2.m4a in Resources */,
 				F531295E24B2509B0027FEE5 /* launch2.png in Resources */,
@@ -425,7 +428,6 @@
 				F552F80D253E46D80024089D /* fortunes.plist in Resources */,
 				F5DB029225BF648F005A4F3C /* personalities.plist in Resources */,
 				F552F81825409F1F0024089D /* chimes.m4a in Resources */,
-				F5F17F2825BF45EA00308573 /* ML Models in Resources */,
 				F51D63BF24AC555C0096B2C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
