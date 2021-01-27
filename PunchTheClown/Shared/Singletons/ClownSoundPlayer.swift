@@ -84,7 +84,7 @@ class ClownSoundPlayer {
             tempSound = try AVAudioPlayer(contentsOf: url)
             self.groanSounds.append(tempSound)
             
-            punchPath = Bundle.main.path(forResource: "chimes.m4a", ofType:nil)!
+            punchPath = Bundle.main.path(forResource: "swoosh.wav", ofType:nil)!
             url = URL(fileURLWithPath: punchPath)
             fortuneAppearsSound = try AVAudioPlayer(contentsOf: url)
             

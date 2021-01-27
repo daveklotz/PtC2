@@ -14,8 +14,6 @@ let timerInterval = 0.2
 let theTimer =  Timer.publish(every: timerInterval, on: .main, in: .default).autoconnect()
 
 
-
-
 struct ContentView: View {
     @State private var clownPosition:CGPoint = CGPoint(x: 0.0, y: 150.0)
     @State private var clownImage:String = "clown"
@@ -26,6 +24,7 @@ struct ContentView: View {
     @State /*@AppStorage("oofCounter")*/ var oofCounter:Int = 0
     @AppStorage("totalPunches") var totalPunches:Int = 0
     @AppStorage("showWhatsNew") var showWhatsNew: Bool = true
+    @AppStorage("autoFortune") var autoFortune: Bool = true
 //    @State var bigTopSound: AVAudioPlayer?
 //    @State var punchSound: AVAudioPlayer?
 //    @State var groan1Sound: AVAudioPlayer?
@@ -44,18 +43,18 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Image("background")
+                Image("background2")
                     .resizable()
-                    .aspectRatio(geometry.size, contentMode: .fill)
+                    .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     HStack {
                         VStack {
                             Text("Game Score: \(oofCounter)")
-                                .foregroundColor(.blue)
+                                .foregroundColor(.yellow)
                                 .font(.footnote)
                             Text("Total Score: \(totalPunches)")
-                                .foregroundColor(.blue)
+                                .foregroundColor(.yellow)
                                 .font(.footnote)
                         }
                         .padding()
@@ -68,6 +67,7 @@ struct ContentView: View {
                             
                         }) {
                             Image(systemName: "gearshape")
+                                .accentColor(.yellow)
                                 .padding()
                         }
                         
@@ -118,7 +118,7 @@ struct ContentView: View {
                             oofCounter = oofCounter + 1
                             totalPunches = totalPunches + 1
                             
-                            if oofCounter % 20 == 0 {
+                            if (oofCounter % 20 == 0) && autoFortune {
                                 self.pauseBigTopsSounds()
                                 self.activeSheet = .fortuneScreen
                                 if totalPunches == 20 {
@@ -141,7 +141,7 @@ struct ContentView: View {
                     
                 }
                 .onAppear {
-                    ClownSoundPlayer.shared.playBigtopSound()
+                    //ClownSoundPlayer.shared.playBigtopSound()
                     
                 }
             }
@@ -231,5 +231,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            
     }
 }

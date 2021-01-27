@@ -20,6 +20,8 @@ struct PersonalityView: View {
                     .scaledToFit()
                     //.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .bottom)
                     .opacity(0.4)
+                    .ignoresSafeArea(edges: .all)
+                    
                 Spacer()
             }
             VStack {
@@ -42,7 +44,7 @@ struct PersonalityView: View {
                 warning = PersonalityJudge.shared.provideWarning()
                 judgement = PersonalityJudge.shared.provideJudgement()
             }
-        } // end Zstack
+        }// end Zstack
     }
     
     
