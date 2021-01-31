@@ -74,7 +74,7 @@ struct ContentView: View {
                     }
                     .padding()
                     Spacer()
-                    if self.totalPunches > 99 {
+                    if self.totalPunches > 99 || true {
                         HStack {
                             Button(action: {
                                 self.pauseBigTopsSounds()
@@ -85,7 +85,7 @@ struct ContentView: View {
                             }) {
                                 Text("Show Me A Fortune!!")
                             }
-                            .padding()
+                            .buttonStyle(ClownButtonStyle())
                             Spacer()
                             Button(action: {
                                 self.pauseBigTopsSounds()
@@ -96,9 +96,13 @@ struct ContentView: View {
                             }) {
                                 Text("My Personality")
                             }
+                            .buttonStyle(ClownButtonStyle())
+//
                             
                         }
+                        
                         .padding()
+//
                         
                     }
                 }

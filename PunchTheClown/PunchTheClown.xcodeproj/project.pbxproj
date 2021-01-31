@@ -33,6 +33,7 @@
 		F552F80C253E46D80024089D /* fortunes.plist in Resources */ = {isa = PBXBuildFile; fileRef = F552F80B253E46D80024089D /* fortunes.plist */; };
 		F552F80D253E46D80024089D /* fortunes.plist in Resources */ = {isa = PBXBuildFile; fileRef = F552F80B253E46D80024089D /* fortunes.plist */; };
 		F57524EF25C0FD360048F723 /* swoosh.wav in Resources */ = {isa = PBXBuildFile; fileRef = F57524EE25C0FD360048F723 /* swoosh.wav */; };
+		F57524FD25C743100048F723 /* ClownButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57524FC25C743100048F723 /* ClownButtonStyle.swift */; };
 		F5DB028925BF5D7D005A4F3C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB028825BF5D7D005A4F3C /* SettingsView.swift */; };
 		F5DB028A25BF5D7D005A4F3C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB028825BF5D7D005A4F3C /* SettingsView.swift */; };
 		F5DB029125BF648F005A4F3C /* personalities.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5DB029025BF648F005A4F3C /* personalities.plist */; };
@@ -103,6 +104,7 @@
 		F552F796253E371D0024089D /* FortuneTeller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneTeller.swift; sourceTree = "<group>"; };
 		F552F80B253E46D80024089D /* fortunes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fortunes.plist; sourceTree = "<group>"; };
 		F57524EE25C0FD360048F723 /* swoosh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swoosh.wav; sourceTree = "<group>"; };
+		F57524FC25C743100048F723 /* ClownButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClownButtonStyle.swift; sourceTree = "<group>"; };
 		F5DB028825BF5D7D005A4F3C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F5DB029025BF648F005A4F3C /* personalities.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = personalities.plist; sourceTree = "<group>"; };
 		F5DB029B25BF7B4A005A4F3C /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				F50B9F42252D420700C7E424 /* FortuneView.swift */,
 				F5F17F0D25BF388500308573 /* PersonalityView.swift */,
 				F5DB028825BF5D7D005A4F3C /* SettingsView.swift */,
+				F57524FC25C743100048F723 /* ClownButtonStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				F5F17F3325BF4A4300308573 /* EXT.mlmodel in Sources */,
 				F5DB029C25BF7B4A005A4F3C /* StorageHelper.swift in Sources */,
 				F5F17F3425BF4A4300308573 /* CON.mlmodel in Sources */,
+				F57524FD25C743100048F723 /* ClownButtonStyle.swift in Sources */,
 				F5F17F3525BF4A4300308573 /* NEU.mlmodel in Sources */,
 				F5F17F3625BF4A4300308573 /* AGR.mlmodel in Sources */,
 				F5F17F0E25BF388600308573 /* PersonalityView.swift in Sources */,
