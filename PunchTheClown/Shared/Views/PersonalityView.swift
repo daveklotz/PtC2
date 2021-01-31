@@ -11,6 +11,7 @@ struct PersonalityView: View {
     
     @State var judgement: String = ""
     @State var warning: String = ""
+    @Binding var isPresented: ActiveSheet?
     
     var body: some View {
         ZStack {
@@ -40,6 +41,14 @@ struct PersonalityView: View {
                     .background(Color(.red).opacity(0.5))
                      .cornerRadius(20.0)
                 Spacer()
+                Button(action: {
+                    
+                    self.isPresented = nil
+                
+                }) {
+                    Text("Dismiss")
+                }
+                .buttonStyle(ClownButtonStyle())
                 
             }// end Vstack
             .onAppear() {
@@ -55,6 +64,6 @@ struct PersonalityView: View {
 
 struct PersonalityView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalityView()
+        PersonalityView(isPresented: .constant(.personalityScreen))
     }
 }

@@ -74,7 +74,7 @@ struct ContentView: View {
                     }
                     .padding()
                     Spacer()
-                    if self.totalPunches > 99 || true {
+                    if self.totalPunches > 99 {
                         HStack {
                             Button(action: {
                                 self.pauseBigTopsSounds()
@@ -148,7 +148,7 @@ struct ContentView: View {
                     
                 }
                 .onAppear {
-                    //ClownSoundPlayer.shared.playBigtopSound()
+                    ClownSoundPlayer.shared.playBigtopSound()
                     
                 }
             }
@@ -166,9 +166,9 @@ struct ContentView: View {
                             self.playFortuneSounds()
                         }
                 } else if item == .personalityScreen {
-                    PersonalityView()                    
+                    PersonalityView(isPresented: $activeSheet)                    
                 } else {
-                    SettingsView()
+                    SettingsView(isPresented: $activeSheet)
                 }
                 
             })

@@ -23,7 +23,7 @@ struct PersonalityJudge {
         let helpfulFortunes: [Fortune] = FortuneTeller.shared.getHelpfulFortunes()
         var warningString: String
         
-        if helpfulFortunes.count > 0 {
+        if helpfulFortunes.count > 10 {
             warningString = "This, of course, is purely for entertainment purposes. But since you're too cheap to go hire a shrink, here you go:"
         } else {
             warningString = "You really should rate more fortunes so I can get a better handle on your state of mind, I'll give it a shot. This, of course, is purely for entertainment purposes. But since you're too cheap to go hire a shrink, here you go:"
