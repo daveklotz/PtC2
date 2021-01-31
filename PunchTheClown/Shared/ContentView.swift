@@ -41,7 +41,7 @@ struct ContentView: View {
     
     
     var body: some View {
-        GeometryReader { geometry in
+      
             ZStack {
                 Image("background2")
                     .resizable()
@@ -72,6 +72,7 @@ struct ContentView: View {
                         }
                         
                     }
+                    .padding()
                     Spacer()
                     if self.totalPunches > 99 {
                         HStack {
@@ -97,7 +98,7 @@ struct ContentView: View {
                             }
                             
                         }
-                        .padding(.bottom, 100)
+                        .padding()
                         
                     }
                 }
@@ -147,7 +148,7 @@ struct ContentView: View {
                     
                 }
             }
-            
+            .statusBar(hidden: true)
             
             .sheet(item: $activeSheet, onDismiss: {
                 self.restartBigTop()
@@ -167,10 +168,10 @@ struct ContentView: View {
                 }
                 
             })
-        }
-        .statusBar(hidden: true)
+      
         
     }
+    
     func playFortuneSounds() -> Void {
         // play sounds
     }
