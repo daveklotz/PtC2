@@ -37,7 +37,7 @@ struct FortuneView: View {
                 VStack {
                     Image("clowngenie")
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         
                         //.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .bottom)
                         .opacity(0.4)

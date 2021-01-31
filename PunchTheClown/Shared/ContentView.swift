@@ -95,8 +95,10 @@ struct ContentView: View {
                             }) {
                                 Text("My Personality")
                             }
-                            .padding()
+                            
                         }
+                        .padding(.bottom, 100)
+                        
                     }
                 }
                 
@@ -165,21 +167,6 @@ struct ContentView: View {
                 }
                 
             })
-//            .onAppear {
-//                self.playFortuneSounds()
-//            }
-//            //            .sheet(isPresented: $showWhatsNew, content: {
-//            //                FortuneView(showIntro: true, isPresented: $showWhatsNew)
-//            //
-//            //            })
-//            .sheet(isPresented: $showingPersonality, onDismiss: {
-//                self.restartBigTop()
-//            }, content: {
-//                PersonalityView()
-//            }).onAppear {
-//                self.playFortuneSounds()
-//            }
-            
         }
         .statusBar(hidden: true)
         
