@@ -37,24 +37,24 @@ struct SettingsView: View {
                 Color(red: 0.9, green: 0.9, blue: 0, opacity: 1)
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             )
-                Button(action: {
-                    // reset fortune dasta
-                    self.showAlert = true
-                    
-                }) {
-                    Text("Reset Fortune Helpfulness Data")
-                }
-                .alert(isPresented: $showAlert) { () -> Alert in
-                            let primaryButton = Alert.Button.default(Text("NO! Don't erase!")) {
-                                self.showAlert = false
-                                
-                            }
-                            let secondaryButton = Alert.Button.cancel(Text("Yes! Get rid of it!")) {
-                               deleteFortuneHelpfulnessData()
-                                self.showAlert = false
-                            }
-                            return Alert(title: Text("Erase Fortunes??"), message: Text("Clicking Yes will remove all the fortune input you worked so hard on! Are you sure???"), primaryButton: primaryButton, secondaryButton: secondaryButton)
-                        }
+//                Button(action: {
+//                    // reset fortune dasta
+//                    self.showAlert = true
+//                    
+//                }) {
+//                    Text("Reset Fortune Helpfulness Data")
+//                }
+//                .alert(isPresented: $showAlert) { () -> Alert in
+//                            let primaryButton = Alert.Button.default(Text("NO! Don't erase!")) {
+//                                self.showAlert = false
+//                                
+//                            }
+//                            let secondaryButton = Alert.Button.cancel(Text("Yes! Get rid of it!")) {
+//                               deleteFortuneHelpfulnessData()
+//                                self.showAlert = false
+//                            }
+//                            return Alert(title: Text("Erase Fortunes??"), message: Text("Clicking Yes will remove all the fortune input you worked so hard on! Are you sure???"), primaryButton: primaryButton, secondaryButton: secondaryButton)
+//                        }
                 NavigationLink(destination: LicensesView()) {
                   Text("Licenses")
                 }
