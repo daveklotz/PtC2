@@ -14,8 +14,6 @@ let timerInterval = 0.2
 let theTimer =  Timer.publish(every: timerInterval, on: .main, in: .default).autoconnect()
 
 
-
-
 struct ContentView: View {
     @State private var clownPosition:CGPoint = CGPoint(x: 0.0, y: 150.0)
     @State private var clownImage:String = "clown"
@@ -26,6 +24,7 @@ struct ContentView: View {
     @State /*@AppStorage("oofCounter")*/ var oofCounter:Int = 0
     @AppStorage("totalPunches") var totalPunches:Int = 0
     @AppStorage("showWhatsNew") var showWhatsNew: Bool = true
+    @AppStorage("autoFortune") var autoFortune: Bool = true
 //    @State var bigTopSound: AVAudioPlayer?
 //    @State var punchSound: AVAudioPlayer?
 //    @State var groan1Sound: AVAudioPlayer?
@@ -42,20 +41,20 @@ struct ContentView: View {
     
     
     var body: some View {
-        GeometryReader { geometry in
+      
             ZStack {
-                Image("background")
+                Image("background2")
                     .resizable()
-                    .aspectRatio(geometry.size, contentMode: .fill)
+                    .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     HStack {
                         VStack {
                             Text("Game Score: \(oofCounter)")
-                                .foregroundColor(.blue)
+                                .foregroundColor(.yellow)
                                 .font(.footnote)
                             Text("Total Score: \(totalPunches)")
-                                .foregroundColor(.blue)
+                                .foregroundColor(.yellow)
                                 .font(.footnote)
                         }
                         .padding()
@@ -68,10 +67,12 @@ struct ContentView: View {
                             
                         }) {
                             Image(systemName: "gearshape")
+                                .accentColor(.yellow)
                                 .padding()
                         }
                         
                     }
+                    .padding()
                     Spacer()
                     if self.totalPunches > 99 {
                         HStack {
@@ -84,7 +85,7 @@ struct ContentView: View {
                             }) {
                                 Text("Show Me A Fortune!!")
                             }
-                            .padding()
+                            .buttonStyle(ClownButtonStyle())
                             Spacer()
                             Button(action: {
                                 self.pauseBigTopsSounds()
@@ -95,8 +96,14 @@ struct ContentView: View {
                             }) {
                                 Text("My Personality")
                             }
-                            .padding()
+                            .buttonStyle(ClownButtonStyle())
+//
+                            
                         }
+                        
+                        .padding()
+//
+                        
                     }
                 }
                 
@@ -118,7 +125,7 @@ struct ContentView: View {
                             oofCounter = oofCounter + 1
                             totalPunches = totalPunches + 1
                             
-                            if oofCounter % 20 == 0 {
+                            if (oofCounter % 20 == 0) && autoFortune {
                                 self.pauseBigTopsSounds()
                                 self.activeSheet = .fortuneScreen
                                 if totalPunches == 20 {
@@ -145,7 +152,7 @@ struct ContentView: View {
                     
                 }
             }
-            
+            .statusBar(hidden: true)
             
             .sheet(item: $activeSheet, onDismiss: {
                 self.restartBigTop()
@@ -159,31 +166,16 @@ struct ContentView: View {
                             self.playFortuneSounds()
                         }
                 } else if item == .personalityScreen {
-                    PersonalityView()                    
+                    PersonalityView(isPresented: $activeSheet)                    
                 } else {
-                    SettingsView()
+                    SettingsView(isPresented: $activeSheet)
                 }
                 
             })
-//            .onAppear {
-//                self.playFortuneSounds()
-//            }
-//            //            .sheet(isPresented: $showWhatsNew, content: {
-//            //                FortuneView(showIntro: true, isPresented: $showWhatsNew)
-//            //
-//            //            })
-//            .sheet(isPresented: $showingPersonality, onDismiss: {
-//                self.restartBigTop()
-//            }, content: {
-//                PersonalityView()
-//            }).onAppear {
-//                self.playFortuneSounds()
-//            }
-            
-        }
-        .statusBar(hidden: true)
+      
         
     }
+    
     func playFortuneSounds() -> Void {
         // play sounds
     }
@@ -231,5 +223,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            
     }
 }

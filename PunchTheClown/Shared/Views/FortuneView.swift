@@ -20,14 +20,40 @@ struct FortuneView: View {
             ZStack {
                 VStack {
                     Image("clowngenie")
+                        .resizable()
                         .scaledToFill()
+                        
                         //.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .bottom)
                         .opacity(0.4)
                     Spacer()
                 }
+                VStack {
                 Text("Every 20 punches Punch will tell you your fortune! After 100 punches you'll be able to get a fortune whenever you like!!")
-                    .padding(.leading, 50)
-                    .padding(.trailing, 50)
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+//                        .fixedSize()
+                    .minimumScaleFactor(0.01)
+                    .padding()
+//                Spacer()
+                Text("Rate enough fortunes as helpful and Punch will be able to give you deep insights into your personality!")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+//                        .fixedSize()
+                    .minimumScaleFactor(0.01)
+                    .padding()
+                    
+                    Button(action: {
+                        
+                        self.isPresented = nil
+                    
+                    }) {
+                        Text("Dismiss")
+                    }
+                    .buttonStyle(ClownButtonStyle())
+                }
+                
+                
+                
             }
 //                .onAppear { self.showWhatsNew = false }
         } else {
@@ -37,7 +63,7 @@ struct FortuneView: View {
                 VStack {
                     Image("clowngenie")
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         
                         //.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .bottom)
                         .opacity(0.4)
@@ -59,6 +85,8 @@ struct FortuneView: View {
                     Spacer()
                     Text("Was this fortune useful?")
                         .padding()
+                        .font(.title)
+                        
                     HStack {
                         Spacer()
                         Button(action: {
@@ -69,10 +97,11 @@ struct FortuneView: View {
                         }) {
                             Text("Yes!")
                         }
-                        .padding()
-                        .padding()
-                        .transition(.move(edge: .trailing))
-                        .animation(.default)
+//                        .padding()
+//                        .padding()
+//                        .transition(.move(edge: .trailing))
+//                        .animation(.default)
+                        .buttonStyle(ClownButtonStyle())
                         Spacer()
                         Button(action: {
                             FortuneTeller.shared.fortuneHelpful(fortune: fortune, wasHelpful: false)
@@ -82,11 +111,11 @@ struct FortuneView: View {
                         }) {
                             Text("No...")
                         }
-                        .padding(.bottom, 50)
-                        .padding(.top, 50)
-                        .transition(.move(edge: .trailing))
-                        .animation(.default)
-                        
+//                        .padding(.bottom, 50)
+//                        .padding(.top, 50)
+//                        .transition(.move(edge: .trailing))
+//                        .animation(.default)
+                        .buttonStyle(ClownButtonStyle())
                         Spacer()
                     }
                 }
